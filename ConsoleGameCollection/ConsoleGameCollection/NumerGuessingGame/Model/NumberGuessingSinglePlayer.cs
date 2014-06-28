@@ -13,16 +13,16 @@ namespace ConsoleGameCollection.NumerGuessingGame.Model {
         /// <param name="player">The name of the player </param>
         /// <param name="minimunValue">The minimum value of the interval that should be guessed in</param>
         /// <param name="maximunValue">The maximum value of the interval that should be guessed in</param>
-        public NumberGuessingSinglePlayer(Player player, int minimunValue, int maximunValue) {
+        public NumberGuessingSinglePlayer(List<Player> player, int minimunValue, int maximunValue) {
             this._minimunValue = minimunValue;
             this._maximunValue = maximunValue;
-            base.playerDic.Add(player.Name, player);
+            base.playerDic.Add(player[0].Name, player[0]);
 
             Random randNum = new Random();
             //Adds a value (the number that should be found) in the dictionary on the players space. Becomes more useful in multiplayer game.
-            base._correctValueDic.Add(player.Name, randNum.Next(_minimunValue, _maximunValue));
+            base._correctValueDic.Add(player[0].Name, randNum.Next(_minimunValue, _maximunValue));
 
-            StartGame(player);
+            StartGame(player[0]);
         }
 
         //Method that plays out the singleplayer game. For each try it removes a life, until there are no more lives.
