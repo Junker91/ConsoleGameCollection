@@ -10,7 +10,7 @@ namespace ConsoleGameCollection.NumerGuessingGame.Controller {
 
         private NumberGuessingGameMode gameMode;
 
-        public NumberGuessingController(int gameModeInput) {
+        public NumberGuessingController(int gameModeInput, int numerOfPlayers) {
             
             GameModeChoice(gameModeInput);
         }
@@ -21,7 +21,7 @@ namespace ConsoleGameCollection.NumerGuessingGame.Controller {
                     gameMode = new NumberGuessingSinglePlayer();
                     break;
                 case 2:
-                    
+                    gameMode = 
                     break;
                 case 3:
                     

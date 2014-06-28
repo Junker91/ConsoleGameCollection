@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Model {
     public abstract class NumberGuessingGameMode : GameMode {
-        protected Dictionary<string, int> _correctValueDic;
+        /* Contains all the variables that the Number Guessing Game modes have in common.
+         */
+
+        protected Dictionary<string, int> _correctValueDic = new Dictionary<string,int>();
     }
 }
