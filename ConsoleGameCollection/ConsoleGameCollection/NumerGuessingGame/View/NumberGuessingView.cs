@@ -21,6 +21,10 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
                 Console.WriteLine("0. Back to main menu\n");
                 Console.Write("Input > ");
                 input = int.Parse(Console.ReadLine());
+                
+                if(input != 0)
+                    GameModeChoice(input);
+
             } while(input != 0);
         }
 

@@ -5,7 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Controller {
-    class NumberGuessingController {
-        //Communication between model and view layer.
+    public class NumberGuessingController {
+        // Communication between model and view layer.
+        // Singleton.
+
+        public static void GameModeChoice(int input) {
+            switch (input) {
+                case 1:
+                    SinglePlayerMode();
+                    break;
+                case 2:
+
+
+            }
+        }
     }
 }

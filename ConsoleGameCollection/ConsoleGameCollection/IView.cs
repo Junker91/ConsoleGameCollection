@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace ConsoleGameCollection {
     interface IView {
         void Menu();
-        void GameModeChoice();
         void DrawGame();
     }
 }
