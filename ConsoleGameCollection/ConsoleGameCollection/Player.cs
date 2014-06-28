@@ -27,6 +27,6 @@ namespace ConsoleGameCollection {
 
         public abstract int Score { get; set; }
 
-        public abstract int lives { get; set; }
+        public abstract int Lives { get; set; }
     }
 }
