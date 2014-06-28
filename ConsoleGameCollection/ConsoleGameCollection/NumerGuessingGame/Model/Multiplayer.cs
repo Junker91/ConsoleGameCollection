@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Model {
-    class Multiplayer {
+    public class Multiplayer {
     }
 }
