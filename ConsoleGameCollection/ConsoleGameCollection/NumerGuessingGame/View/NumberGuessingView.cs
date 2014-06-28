@@ -7,18 +7,17 @@ using ConsoleGameCollection.NumerGuessingGame.Controller;
 using ConsoleGameCollection.NumerGuessingGame.Model;
 
 namespace ConsoleGameCollection.NumerGuessingGame.View {
-    class NumberGuessingView : IView {
+    class NumberGuessingView {
         // Draws everything to the screen. Communicates with the user
 
-        private NumberGuessingController controller;
-
+        private NumberGuessingViewController controller;
 
         public NumberGuessingView() {
-            Menu(controller);
-
+            controller = new NumberGuessingViewController();
+            Menu();
         }
 
-        public void Menu(NumberGuessingController controller) {
+        private void Menu() {
             int input, numberOfPlayers = 0;
             
             do {
@@ -36,39 +35,34 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
                     case 1:
                         numberOfPlayers = 1;
                         break;
-                    case 2:
-                        Console.Write("How many players?\n" + 
-                                      "input > ");
-                        numberOfPlayers = int.Parse(Console.ReadLine());
-                        break;
-                    case 3:
-                        numberOfPlayers = 1;
-                        break;
                     default:
                         Console.WriteLine("Invalid input. Press any key to try again.");
                         Console.ReadKey();
                         break;
                 }
 
-                if (input > 0 && input <= 3) {
-                    controller = new NumberGuessingController(input, CreatePlayers(1, numberOfPlayers));
-                }
-                    
+                CreatePlayers(numberOfPlayers);
 
+                
             } while(input != 0);
         }
 
-        public List<NumberGuessingPlayer> CreatePlayers(int playersCreated, int numberOfPlayers) {
-            NumberGuessingPlayer player = new NumberGuessingPlayer();
+        private void CreatePlayers(int numberOfPlayers) {
+            int lives = 1;
+            string name;
+            for (int i = 0; i < numberOfPlayers; i++) {
 
-            if (playersCreated < numberOfPlayers)
-                CreatePlayers(playersCreated + 1, numberOfPlayers);
-            
-            return
-        }
+                Console.Write("Enter the name of player {0}\n" +
+                              "input > ", i + 1);
+                name = Console.ReadLine();
 
-        public void DrawGame() {
-
+                if (numberOfPlayers == 1) {
+                    Console.Write("How many lives / tries does player {0} wants?\n" + 
+                                  "input > ", i + 1);
+                    lives = int.Parse(Console.ReadLine());
+                }
+                controller.playerCreation.CreatePlayer(name, lives);
+            }
         }
     }
 }

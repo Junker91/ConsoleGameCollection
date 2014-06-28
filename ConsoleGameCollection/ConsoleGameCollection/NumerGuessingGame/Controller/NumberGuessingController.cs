@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 using ConsoleGameCollection.NumerGuessingGame.Model;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Controller {
+    /* This is the main controller. It connects all other controllers form the number guessing game.
+     */
     public class NumberGuessingController {
-        // Communication between model and view layer.
 
-        private NumberGuessingGameMode gameMode;
+        private static NumberGuessingController instance;
+        private static GameNumberGuessing game;
 
-        public NumberGuessingController(int gameModeInput, List<NumberGuessingPlayer> players) {
-            
-            GameModeChoice(gameModeInput);
+        public static NumberGuessingController GetInstance() {
+            if (instance == null)
+                instance = new NumberGuessingController();
+
+            return instance;
         }
 
-        public void GameModeChoice(int input) {
-            switch (input) {
-                case 1:
-                    gameMode = new NumberGuessingSinglePlayer();
-                    break;
-                case 2:
-                    gameMode = 
-                    break;
-                case 3:
-                    
-                    break;
-            }
+        public GameNumberGuessing GetGame() {
+            if(game == null)
+                game = new GameNumberGuessing();
+
+            return game;
+        }
+
+        public void CreateGame() {
+            if (game == null)
+                game = new GameNumberGuessing();
         }
 
     }
