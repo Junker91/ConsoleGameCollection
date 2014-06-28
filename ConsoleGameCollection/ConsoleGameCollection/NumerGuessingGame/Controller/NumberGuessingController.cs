@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Controller {
     class NumberGuessingController {
+        //Communication between model and view layer.
     }
 }

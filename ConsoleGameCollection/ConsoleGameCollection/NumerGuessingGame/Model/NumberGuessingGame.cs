@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Model {
     class NumberGuessingGame {
+        //Calculation and logistics for the guessing game
     }
 }
