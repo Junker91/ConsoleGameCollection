@@ -9,6 +9,6 @@ namespace ConsoleGameCollection {
         /* Contains all the variables that all game modes have in common 
          */
 
-        private Dictionary<string, Player> playerDic = new Dictionary<string, Player>();
+        protected Dictionary<string, Player> playerDic = new Dictionary<string, Player>();
     }
 }

@@ -17,7 +17,7 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
         }
 
         public void Menu(out NumberGuessingController controller) {
-            int input;
+            int input, numberOfPlayers;
             
             do {
                 Console.Clear();
@@ -30,12 +30,28 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
                 Console.Write("Input > ");
                 input = int.Parse(Console.ReadLine());
 
+                switch(input) {
+                    case 1:
+                        controller = new NumberGuessingController(input, 1);
+                        break;
+                    case 2:
+                        Console.Write("How many players?\n" + 
+                                      "input > ");
+                        int numberOfPlayers = int.Parse(Console.WriteLine());
+                        controller
+                        break;
+                    case 3:
+                        numberOfPlayers = 1;
+                        break;
+                }
+
+
                 if (input < 0 || input > 3) {
                     Console.WriteLine("Invalid input. Press any key to try again.");
                     Console.ReadKey();
-                }
+                } else if(input == 1)
                 else
-                    controller = new NumberGuessingController(input);
+                    
 
             } while(input != 0);
         }
