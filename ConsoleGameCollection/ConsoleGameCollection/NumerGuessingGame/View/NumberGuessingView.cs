@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleGameCollection.NumerGuessingGame.Controller;
 
 namespace ConsoleGameCollection.NumerGuessingGame.View {
     class NumberGuessingView : IView {
@@ -21,9 +22,13 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
                 Console.WriteLine("0. Back to main menu\n");
                 Console.Write("Input > ");
                 input = int.Parse(Console.ReadLine());
-                
-                if(input != 0)
-                    GameModeChoice(input);
+
+                if (input < 0 || input > 3) {
+                    Console.WriteLine("Invalid input. Press any key to try again.");
+                    Console.ReadKey();
+                }
+                else
+                    NumberGuessingController.GameModeChoice(input);
 
             } while(input != 0);
         }

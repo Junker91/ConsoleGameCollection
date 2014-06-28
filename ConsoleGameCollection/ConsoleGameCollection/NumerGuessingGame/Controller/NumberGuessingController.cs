@@ -15,9 +15,16 @@ namespace ConsoleGameCollection.NumerGuessingGame.Controller {
                     SinglePlayerMode();
                     break;
                 case 2:
-
-
+                    Multiplayer();
+                    break;
+                case 3:
+                    VersusAI();
+                    break;
             }
+        }
+
+        private void SinglePlayerMode() {
+
         }
     }
 }
