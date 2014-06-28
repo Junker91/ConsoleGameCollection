@@ -11,7 +11,7 @@ namespace ConsoleGameCollection.NumerGuessingGame.Controller {
 
         private NumberGuessingGameMode gameMode;
 
-        public NumberGuessingController(int gameModeInput, int numerOfPlayers) {
+        public NumberGuessingController(int gameModeInput, List<NumberGuessingPlayer> players) {
             
             GameModeChoice(gameModeInput);
         }

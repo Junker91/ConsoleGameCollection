@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleGameCollection.NumerGuessingGame.Controller;
+using ConsoleGameCollection.NumerGuessingGame.Model;
 
 namespace ConsoleGameCollection.NumerGuessingGame.View {
     class NumberGuessingView : IView {
@@ -11,13 +12,14 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
 
         private NumberGuessingController controller;
 
+
         public NumberGuessingView() {
-            Menu(out controller);
+            Menu(controller);
 
         }
 
-        public void Menu(out NumberGuessingController controller) {
-            int input, numberOfPlayers;
+        public void Menu(NumberGuessingController controller) {
+            int input, numberOfPlayers = 0;
             
             do {
                 Console.Clear();
@@ -32,28 +34,37 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
 
                 switch(input) {
                     case 1:
-                        controller = new NumberGuessingController(input, 1);
+                        numberOfPlayers = 1;
                         break;
                     case 2:
                         Console.Write("How many players?\n" + 
                                       "input > ");
-                        int numberOfPlayers = int.Parse(Console.WriteLine());
-                        controller
+                        numberOfPlayers = int.Parse(Console.ReadLine());
                         break;
                     case 3:
                         numberOfPlayers = 1;
                         break;
+                    default:
+                        Console.WriteLine("Invalid input. Press any key to try again.");
+                        Console.ReadKey();
+                        break;
                 }
 
-
-                if (input < 0 || input > 3) {
-                    Console.WriteLine("Invalid input. Press any key to try again.");
-                    Console.ReadKey();
-                } else if(input == 1)
-                else
+                if (input > 0 && input <= 3) {
+                    controller = new NumberGuessingController(input, CreatePlayers(1, numberOfPlayers));
+                }
                     
 
             } while(input != 0);
+        }
+
+        public List<NumberGuessingPlayer> CreatePlayers(int playersCreated, int numberOfPlayers) {
+            NumberGuessingPlayer player = new NumberGuessingPlayer();
+
+            if (playersCreated < numberOfPlayers)
+                CreatePlayers(playersCreated + 1, numberOfPlayers);
+            
+            return
         }
 
         public void DrawGame() {

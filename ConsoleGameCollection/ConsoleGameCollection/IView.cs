@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleGameCollection {
     interface IView {
-        void Menu();
-        void DrawGame();
+        void CreatePlayers(GameMode gameMode, int numberOfPlayers);
     }
 }
