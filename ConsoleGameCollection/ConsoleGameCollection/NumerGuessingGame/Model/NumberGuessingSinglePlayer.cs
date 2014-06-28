@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Model {
-    public class SinglePlayer {
+    public class NumberGuessingSinglePlayer : GameMode {
         private Player _player;
         private int _minimunValue;
         private int _maximunValue;
 
-        public SinglePlayer(Player player, int minimunValue, int maximunValue) {
+        public NumberGuessingSinglePlayer(Player player, int minimunValue, int maximunValue) {
             this._player = player;
             this._minimunValue = minimunValue;
             this._maximunValue = maximunValue;
         }
+
+
     }
 }
