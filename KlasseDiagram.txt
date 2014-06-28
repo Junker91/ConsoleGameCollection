@@ -1,0 +1,9 @@
+Model:
+	abstrakt Player klasse
+	abstrakt Game klasse
+View:
+	View modulet skal implementere et interface, så det er let at udskifte.
+	klasser som sørger for at udskrive spillet til skærmen.
+		måske en abstrakt Draw klasse?
+Controller:
+	something somehting
