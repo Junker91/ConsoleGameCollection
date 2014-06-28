@@ -7,24 +7,22 @@ using System.Threading.Tasks;
 namespace ConsoleGameCollection.NumerGuessingGame.Controller {
     public class NumberGuessingController {
         // Communication between model and view layer.
-        // Singleton.
 
-        public static void GameModeChoice(int input) {
+        private GameMode gameMode;
+
+        public void GameModeChoice(int input) {
             switch (input) {
                 case 1:
-                    SinglePlayerMode();
+                    gameMode = new 
                     break;
                 case 2:
-                    Multiplayer();
+                    
                     break;
                 case 3:
-                    VersusAI();
+                    
                     break;
             }
         }
 
-        private void SinglePlayerMode() {
-
-        }
     }
 }

@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameMode.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="NumerGuessingGame\Controller\ControllerVersusAI.cs" />
+    <Compile Include="NumerGuessingGame\Controller\ControllerMultiplayer.cs" />
+    <Compile Include="NumerGuessingGame\Controller\ControllerSinglePlayer.cs" />
     <Compile Include="NumerGuessingGame\Controller\NumberGuessingController.cs" />
     <Compile Include="NumerGuessingGame\Model\NumberGuessingAIEasy.cs" />
     <Compile Include="NumerGuessingGame\Model\Multiplayer.cs" />
