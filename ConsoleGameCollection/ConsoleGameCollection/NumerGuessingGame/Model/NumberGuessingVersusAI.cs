@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleGameCollection.NumerGuessingGame.Model {
-    public class NumberGuessingVersusAI : GameMode {
+    public class NumberGuessingVersusAI : NumberGuessingGameMode {
     }
 }
