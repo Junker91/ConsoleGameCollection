@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleGameCollection {
-    public class GameMode {
+    public abstract class GameMode {
         
         private Dictionary<string, Player> playerDic = new Dictionary<string, Player>();
-
-        public abstract void NextTurn();
     }
 }

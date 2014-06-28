@@ -8,12 +8,17 @@ namespace ConsoleGameCollection.NumerGuessingGame.Controller {
     public class NumberGuessingController {
         // Communication between model and view layer.
 
-        private GameMode gameMode;
+        private NumberGuessingGameMode gameMode;
+
+        public NumberGuessingController(int gameModeInput) {
+            
+            GameModeChoice(gameModeInput);
+        }
 
         public void GameModeChoice(int input) {
             switch (input) {
                 case 1:
-                    gameMode = new 
+                    gameMode = new NumberGuessingSinglePlayer();
                     break;
                 case 2:
                     

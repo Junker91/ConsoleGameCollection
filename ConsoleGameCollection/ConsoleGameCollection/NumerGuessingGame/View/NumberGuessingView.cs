@@ -9,12 +9,19 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
     class NumberGuessingView : IView {
         // Draws everything to the screen. Communicates with the user
 
-        public void Menu() {
+        private NumberGuessingController controller;
+
+        public NumberGuessingView() {
+            Menu(out controller);
+
+        }
+
+        public void Menu(out NumberGuessingController controller) {
             int input;
             
             do {
                 Console.Clear();
-                Console.WriteLine("How do you want to play?");
+                Console.WriteLine("\nNumber Guessing Game!\n");
                 Console.WriteLine("\nHow do you want to play?\n");
                 Console.WriteLine("1. Single Player");
                 Console.WriteLine("2. Multiplayer");
@@ -28,7 +35,7 @@ namespace ConsoleGameCollection.NumerGuessingGame.View {
                     Console.ReadKey();
                 }
                 else
-                    NumberGuessingController.GameModeChoice(input);
+                    controller = new NumberGuessingController(input);
 
             } while(input != 0);
         }
